@@ -352,7 +352,7 @@ fields and methods in a class to JavaScript, but also *only* that. It does not e
 
 ## 4 -  Access JavaScript code from Scalajs
 
-### 4.1 - Benaderen van variabele JavaScript vanuit ScalaJS
+### 4.1 - Accessing a JavaScript field from ScalaJS
 **Purpose**
 * Learn to access a simple value from a javascript object
 
@@ -375,7 +375,7 @@ trait Window extends js.Object {
 ```
 
 
-var, val and def definitions without parentheses all map to field access
+The var, val and def definitions without parentheses all map to field access
  in JavaScript, whereas def definitions with parentheses (even empty) map
  to method calls in JavaScript.
 
@@ -392,7 +392,7 @@ to define Scala.JS defined JavaScript classes:
 
 <https://www.scala-js.org/doc/interoperability/sjs-defined-js-classes.html>
 
-### 4.2 - Benaderen van method JavaScript vanuit ScalaJS
+### 4.2 - Accessing a JavaScript function from ScalaJS
 **Purpose**
 * Learn to access a method from a javascript object )
 
@@ -431,7 +431,7 @@ You can reference the scala.js website all you like, suggestions:
 
 
 
-Bronnen:
+# Sources:
 
 * Old presentation progress scala.js: <http://lampwww.epfl.ch/~doeraene/presentations/scala-js-scaladays2014/#/>
 * Good hands-on: <http://www.lihaoyi.com/hands-on-scala-js/>
