@@ -435,5 +435,5 @@ You can reference the scala.js website all you like, suggestions:
 
 * Old presentation progress scala.js: <http://lampwww.epfl.ch/~doeraene/presentations/scala-js-scaladays2014/#/>
 * Good hands-on: <http://www.lihaoyi.com/hands-on-scala-js/>
-* bestaande facades: <http://www.scala-js.org/libraries/facades.html>
-* javascript <-> scalajs types: <http://www.scala-js.org/doc/interoperability/types.html>
+* Existing facades: <http://www.scala-js.org/libraries/facades.html>
+* JavaScript <-> Scala.JS types: <http://www.scala-js.org/doc/interoperability/types.html>
