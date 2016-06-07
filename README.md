@@ -198,9 +198,7 @@ Then build it, and open the ```hello.html``` in the target directory.
 You see the message appear in the page.
 
 
-<div style="background-color:gray;border:1px solid black;">
-To make it a little more interesting, try the following scala code:
-</div><br/>
+> To make it a little more interesting, try the following scala code:
 
 ```scala
 
@@ -215,6 +213,7 @@ object MainApp extends JSApp {
 }
 
 ```
+
 This should update with a new number at each refresh.
 
 
@@ -229,14 +228,11 @@ It also stil performs a println after performing the insert.
 ### 2.2.doItYourself - Blink tag
 
 
-<div style="background-color:gray;border:1px solid black;">
-Use the dom.window facade to create a blink tag, that
-changes the css background color of the div each 100ms.
-</div><br/>
+> Use the dom.window facade to create a blink tag, that
+> changes the css background color of the div each 100ms.
 
 Hints:
-```window.setInterval```
-and ```setAttribute``` on the div element.
+```window.setInterval``` and ```setAttribute``` on the div element.
 
 
 ### 2.3 - Continuous building
@@ -300,10 +296,8 @@ Check the result by opening the brower to
 <http://localhost:12345/target/scala-2.11/classes/hello.html>
 
 
-<div style="background-color:gray;border:1px solid black;">
-Change some code in hello.html; the text for example.
-The page will automatically reload (Firefox doesn't ) and show the changes.
-</div><br/>
+> Change some code in hello.html; the text for example.
+> The page will automatically reload (Firefox doesn't ) and show the changes.
 
 Check the developer console what do you see?
 
@@ -333,11 +327,10 @@ The class, when exported, is visible as a method in JavaScript, eg.
 var instance = foo.bar.ClassName();
 ```
 
-<div style="background-color:gray;border:1px solid black;">
-We have a Scala.JS Calculator class and a html page that wants to use it.
-<ul><li> modify the Calculator in such a way that it is visible in JavaScrit.</li>
-<li>modify the webpage to use the class.</li></ul>
-</div><br/>
+> We have a Scala.JS Calculator class and a html page that wants to use it.
+> * modify the Calculator in such a way that it is visible in JavaScrit.
+> * modify the webpage to use the class.
+
 
 You can modify the name with which an item is exposed to JavaScript by providing an argument to JsExport, eg.
 ```Scala
@@ -345,17 +338,16 @@ You can modify the name with which an item is exposed to JavaScript by providing
 ```
 
 
-<div style="background-color:gray;border:1px solid black;">
-Try it yourself, modify the name of Calculator to AbsCalculator. You might notice something.
-</div><br/>
+
+> Try it yourself, modify the name of Calculator to AbsCalculator. You might notice something.
+
 
 Another annotation to export elements is ```@JSExportAll```. It is an annotation on class level that exposes all
 fields and methods in a class to JavaScript, but also *only* that. It does not export the class itself.
 
 
-<div style="background-color:gray;border:1px solid black;">
-Remove the JSExport from the method and replace it by using @JSExportAll
-</div><br/>
+> Remove the JSExport from the method and replace it by using ```@JSExportAll```
+
 
 
 ## 4 -  Access JavaScript code from Scalajs
@@ -388,9 +380,7 @@ var, val and def definitions without parentheses all map to field access
  to method calls in JavaScript.
 
 
-<div style="background-color:gray;border:1px solid black;">
-Make this exercise work by implementing the facades for Input and Result.
-</div><br/>
+> Make this exercise work by implementing the facades for Input and Result.
 
 The ScalaJS website provides a list of how the different data types are mapped from
 ScalaJS to JavaScript and vice versa.
@@ -411,10 +401,8 @@ to define Scala.JS defined JavaScript classes:
 As mentioned previously, vals and vars map to JavaScript fields. Scala def definitions
 with parentheses however, map toJavaScript method calls.
 
-<div style="background-color:gray;border:1px solid black;">
-In this exercise, make the Calculator work, by using the JavaScript AbsCalculation execute
-method.
-</div><br/>
+> In this exercise, make the Calculator work, by using the JavaScript AbsCalculation execute
+> method.
 
 
 
@@ -429,10 +417,10 @@ entice you to start with scala.js.
 
 Now, we will run this locally.
 
-<div style="background-color:gray;border:1px solid black;">
-In this exercise, you find the oscillator code, with some slight adjustments,
-in Oscillo.scala. Create the facades in such a way , that te oscillator works.
-</div><br/>
+
+> In this exercise, you find the oscillator code, with some slight adjustments,
+> in Oscillo.scala. Create the facades in such a way , that te oscillator works.
+
 
 Note: some type-hints are provided in the scala code.
 
