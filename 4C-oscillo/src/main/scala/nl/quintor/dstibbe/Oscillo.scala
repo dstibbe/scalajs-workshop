@@ -3,7 +3,6 @@ package nl.quintor.dstibbe
 import java.lang.Math._
 
 import nl.quintor.dstibbe.domain.GlobalScopeStuff._
-import org.scalajs.dom
 
 import scala.scalajs.js
 
