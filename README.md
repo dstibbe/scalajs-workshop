@@ -328,7 +328,7 @@ var instance = foo.bar.ClassName();
 ```
 
 > We have a Scala.JS Calculator class and a html page that wants to use it.
-> * modify the Calculator in such a way that it is visible in JavaScrit.
+> * modify the Calculator in such a way that it is visible in JavaScript.
 > * modify the webpage to use the class.
 
 
