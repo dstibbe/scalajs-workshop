@@ -177,7 +177,7 @@ libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "0.9.0"
 ```
 
 This library provides an interface from scalajs to the JavaScript DOM object.
-(The meaning of ```%%%``` will be discussed later on)
+(The ```%%%``` indicates that the dependency is a webjar (<http://www.webjars.org/>).)
 
 > Now we we'll modify our html, by adding a div where text can be placed:. Add the following to
 > the html page in `src/main/resources/hello.html`, as following
@@ -328,7 +328,7 @@ var instance = foo.bar.ClassName();
 ```
 
 > We have a Scala.JS Calculator class and a html page that wants to use it.
-> * modify the Calculator in such a way that it is visible in JavaScrit.
+> * modify the Calculator in such a way that it is visible in JavaScript.
 > * modify the webpage to use the class.
 
 
@@ -352,7 +352,7 @@ fields and methods in a class to JavaScript, but also *only* that. It does not e
 
 ## 4 -  Access JavaScript code from Scalajs
 
-### 4.1 - Benaderen van variabele JavaScript vanuit ScalaJS
+### 4.1 - Accessing a JavaScript field from ScalaJS
 **Purpose**
 * Learn to access a simple value from a javascript object
 
@@ -375,7 +375,7 @@ trait Window extends js.Object {
 ```
 
 
-var, val and def definitions without parentheses all map to field access
+The var, val and def definitions without parentheses all map to field access
  in JavaScript, whereas def definitions with parentheses (even empty) map
  to method calls in JavaScript.
 
@@ -392,7 +392,7 @@ to define Scala.JS defined JavaScript classes:
 
 <https://www.scala-js.org/doc/interoperability/sjs-defined-js-classes.html>
 
-### 4.2 - Benaderen van method JavaScript vanuit ScalaJS
+### 4.2 - Accessing a JavaScript function from ScalaJS
 **Purpose**
 * Learn to access a method from a javascript object )
 
@@ -431,9 +431,9 @@ You can reference the scala.js website all you like, suggestions:
 
 
 
-Bronnen:
+# Sources:
 
 * Old presentation progress scala.js: <http://lampwww.epfl.ch/~doeraene/presentations/scala-js-scaladays2014/#/>
 * Good hands-on: <http://www.lihaoyi.com/hands-on-scala-js/>
-* bestaande facades: <http://www.scala-js.org/libraries/facades.html>
-* javascript <-> scalajs types: <http://www.scala-js.org/doc/interoperability/types.html>
+* Existing facades: <http://www.scala-js.org/libraries/facades.html>
+* JavaScript <-> Scala.JS types: <http://www.scala-js.org/doc/interoperability/types.html>
