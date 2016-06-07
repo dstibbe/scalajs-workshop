@@ -177,7 +177,7 @@ libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "0.9.0"
 ```
 
 This library provides an interface from scalajs to the JavaScript DOM object.
-(The meaning of ```%%%``` will be discussed later on)
+(The ```%%%``` indicates that the dependency is a webjar (<http://www.webjars.org/>).)
 
 > Now we we'll modify our html, by adding a div where text can be placed:. Add the following to
 > the html page in `src/main/resources/hello.html`, as following
