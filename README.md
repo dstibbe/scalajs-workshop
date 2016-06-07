@@ -179,19 +179,15 @@ libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "0.9.0"
 This library provides an interface from scalajs to the JavaScript DOM object.
 (The meaning of ```%%%``` will be discussed later on)
 
-<div style="background-color:gray;border:1px solid black;">
-Now we we'll modify our html, by adding a div where text can be placed:. Add the following to
-the html page in `src/main/resources/hello.html`, as following
-</div><br/>
+> Now we we'll modify our html, by adding a div where text can be placed:. Add the following to
+> the html page in `src/main/resources/hello.html`, as following
 
 ```html
 <div id="fillme">I am empty</div>
 ```
 
 
-<div style="background-color:gray;border:1px solid black;">
-Change the main app to fill the div with 'hello world' as shown below.
-</div><br/>
+> Change the main app to fill the div with 'hello world' as shown below.
 
 ```scala
 document.getElementById("fillme").innerHTML = "Hello World"
