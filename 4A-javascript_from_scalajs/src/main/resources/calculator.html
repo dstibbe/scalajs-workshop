@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+
+<script type="text/javascript" src="/workbench.js"></script>
+<script type="text/javascript" src="../javascript_from_scalajs_4A-fastopt.js"></script>
+
+<script type="text/javascript">
+        /**
+         **************************************************************
+         * These 2 objects will be read and written from/to by scalajs.
+         **************************************************************
+         */
+        var Result = {
+            value: 0
+        };
+
+        var Input = {
+            value: 0
+        };
+
+        /**************************************************************/
+
+
+
+        function getInputFromDiv() {
+          Input.value =  Number( document.getElementById("calcValue").value )
+        }
+
+        function setResultInDiv() {
+          document.getElementById("result").innerHTML =  Result.value;
+        }
+
+        function calculate()  {
+          console.log( "[javascript] enter calculate()" );
+
+          getInputFromDiv();
+          console.log( "[javascript] set input value: " + Input.value );
+
+          console.log( "[javascript] call scalajs calculate()" );
+          nl.quintor.dstibbe.Calculator().calculate();
+
+          console.log( "[javascript] reading result value: " + Result.value );
+          setResultInDiv();
+        }
+</script>
+
+
+<div>
+    <form action="javascript:calculate()">
+        <input id="calcValue"/>
+        <button type="submit">Calculate</button>
+    </form>
+
+    calculation result: <span id="result"><span>
+
+</div>
+</body>
+</html>

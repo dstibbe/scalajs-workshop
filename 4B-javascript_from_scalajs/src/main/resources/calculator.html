@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+
+<script type="text/javascript" src="/workbench.js"></script>
+<script type="text/javascript" src="../javascript_from_scalajs_4B-fastopt.js"></script>
+
+<script type="text/javascript">
+        function getInput() {
+         return document.getElementById("calcValue").value
+        }
+
+        function setResult( value ) {
+         document.getElementById("result").innerHTML =  value;
+        }
+
+        function calculate()  {
+          var input = getInput();
+          if( input != "" ) {
+            var value = Number( input );
+            setResult( nl.quintor.dstibbe.Calculator().calculate(value) );
+          }
+        }
+
+
+        /**
+          AbsCalculation is an object defined through scalajs.
+
+          Here we set the execute method which is defined in scalajs as :
+
+            @js.native
+            object AbsCalculation extends js.Object {
+                def execute(x: Double): Double = js.native
+            }
+        */
+        var  AbsCalculation = {
+            execute: function (x) {
+                console.log("JavaScript calculation called");
+
+                if (x < 0) {
+                    return -x;
+                } else {
+                    return x;
+                }
+            }
+        }
+</script>
+
+
+<div>
+    <form action="javascript:calculate()">
+        <input id="calcValue"/>
+        <button type="submit">Calculate</button>
+    </form>
+
+    calculation result: <span id="result"><span>
+
+</div>
+</body>
+</html>

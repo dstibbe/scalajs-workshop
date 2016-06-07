@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator - Exercise 3A</title>
+</head>
+<body>
+
+<script type="text/javascript" src="/workbench.js"></script>
+<script type="text/javascript" src="../scalajs_from_javascript_3A-fastopt.js"></script>
+<script type="text/javascript">
+      function calculate()  {
+          var input = document.getElementById("calcValue").value;
+          if( input != "" ) {
+            var value = Number( input );
+
+            var result = ;//call calculator
+            document.getElementById("result").innerHTML =  result;
+          }
+      }
+</script>
+
+<div>
+    <form action="javascript:calculate()">
+        <input id="calcValue"/>
+        <button type="submit">Calculate</button>
+    </form>
+
+    calculation result: <span id="result"><span>
+
+</div>
+</body>
+</html>
