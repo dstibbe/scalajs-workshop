@@ -1,7 +1,7 @@
 package nl.quintor.dstibbe
 
 import java.lang.Math._
-
+import nl.quintor.dstibbe.domain._
 import nl.quintor.dstibbe.domain.GlobalScopeStuff._
 
 import scala.scalajs.js
@@ -18,7 +18,7 @@ object Oscillo extends js.JSApp {
       ("green", x => 2 - abs(x % 8 - 4)),
       ("gray", x => 3 * pow(sin(x / 12), 2) * sin(x))
     ).zipWithIndex
-    dom.window.setInterval(() => {
+    window.setInterval(() => {
       x = (x + 1) % w
       if (x == 0) context.clearRect(0, 0, w, h)   //Double, Double, Double, Double
       else for (((color, func), i) <- graphs) {
