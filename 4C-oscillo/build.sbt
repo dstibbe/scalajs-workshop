@@ -6,10 +6,10 @@ enablePlugins(ScalaJSPlugin)
 
 
 //Do NOT use this during this exercise!
-//libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "0.9.0"
+libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "0.9.0"
 
 workbenchSettings
 
-bootSnippet := "nl.quintor.dstibbe.Oscillo().main();"
+bootSnippet := "location.reload();"
 
 updateBrowsers <<= updateBrowsers.triggeredBy(fastOptJS in Compile)

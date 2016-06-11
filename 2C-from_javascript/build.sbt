@@ -8,7 +8,7 @@ libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "0.9.0"
 
 workbenchSettings
 
-bootSnippet := "quintor.exercise2.MainApp().main();"
+bootSnippet := "location.reload();"
 
 updateBrowsers <<= updateBrowsers.triggeredBy(fastOptJS in Compile)
 

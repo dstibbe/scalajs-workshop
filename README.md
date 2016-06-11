@@ -263,7 +263,7 @@ For configuring the plugin, we added in ```./build.sbt``` :
 
 ```scala
 workbenchSettings
-bootSnippet := "quintor.exercise2.MainApp().main();"
+bootSnippet := "location.reload();"
 ```
 
 The first line loads the settings for the workbench. The second line, tells the workbench how to restart your application through javascript.
