@@ -1,5 +1,9 @@
 # Scala.js Workshop
 
+#### A workshop to get you introduced to the basic concepts of Scala.js
+
+###### by [David Stibbe](mailto:dstibbe@gmail.com).
+
 
 ## Requirements
 * Required knwoledge: scala and SBT (minimal)
@@ -14,8 +18,6 @@
 
 
 # Evening 1: Basics and frontend
- 
-
  
  
 ## 1- Standalone App
@@ -246,7 +248,7 @@ This provides a simple Akka-based webserver to make development easier.
 
 The workbench plugin was configured as following:
 
-*Adding the plugin*
+*The plugin was add*
 
 For adding the plugin, we added in ```project/plugins.sbt``` :
 
@@ -257,7 +259,7 @@ resolvers += "spray repo" at "http://repo.spray.io"
 addSbtPlugin("com.lihaoyi" % "workbench" % "0.2.3")
 ```
 
-*Configuring the plugin*
+*The plugin was configured*
 
 For configuring the plugin, we added in ```./build.sbt``` :
 
@@ -270,16 +272,15 @@ The first line loads the settings for the workbench. The second line, tells the 
 Here we enter the script we previously had in ```hello.html``` to start our application.
 
 
-*Using the plugin*
+*The plugin is used*
 
-To use the workbench we configure a single script tag in ```hello.html```
+To use the workbench we configured a single script tag in ```hello.html```
 
 ```html
 <script type="text/javascript" src="/workbench.js"></script>
 ```
-and remove the old ones.
 
-This will bootstrap the workbench, including the created fastOptJS javascript, after which it will execute the bootSnippet, configured above.
+This bootstraps the workbench, including the created fastOptJS javascript, after which it will execute the bootSnippet, configured above.
 
 
 *Run with the plugin*
@@ -321,7 +322,7 @@ To make Scala.JS methods and classes visible in JavaScript, you add the ```@JSEx
   annotation to each. Not adding this annotation to the class, makes the methods in it, only
   visible via an anonymous object.
 
-The class, when exported, is visible as a method in JavaScript, eg.
+The class, when exported, is visible with the full qualified name as a method in JavaScript, eg.
 
 ```JavaScript
 var instance = foo.bar.ClassName();
@@ -346,7 +347,7 @@ Another annotation to export elements is ```@JSExportAll```. It is an annotation
 fields and methods in a class to JavaScript, but also *only* that. It does not export the class itself.
 
 
-> Remove the JSExport from the method and replace it by using ```@JSExportAll```
+> Remove the JSExport from the method and replace it by using ```@JSExportAll``` on class level.
 
 
 
@@ -358,11 +359,11 @@ fields and methods in a class to JavaScript, but also *only* that. It does not e
 
 **Exercise 4.A**
 
-This exercise provides a Calculator that gets it input by reading two JavaScript objects, called
+This exercise provides a Calculator that gets its input by reading two JavaScript objects, called
 ```Input``` and ```Result``` (instead of getting it as argument for the method and simply returning the result).
 
 To represent a JavaScript object as a Scala.JS trait, it has to extend (direct, or indirectly) ```js.Any``` (usually it extends ```js.Object```) and be annotated with ```@js.native```.
-In such a trait, all concrete definitios require ```=native``` as body and are mapped
+In such a trait, all concrete definitions require ```=native``` as body and are mapped
 to their javascript counterparts.
 
 Example of a small part of a facade for the JavaScript window object:
