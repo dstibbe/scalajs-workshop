@@ -431,6 +431,74 @@ You can reference the scala.js website all you like, suggestions:
 * <https://www.scala-js.org/doc/interoperability/types.html>
 
 
+# Evening 2: An app
+
+## 5 - Angular introduction
+
+### 5.1 - Hello world
+
+
+* Add angular dependency: difference between sbt and js dependencies
+* Add deps.js script to html
+* Binding is done through 'directives' like ng-model and "{{...}}" instructions.
+** {{name}} binds to the field called 'name' in te scope.
+** 'controller' is a special field though which you can access the controller.
+
+* Run. You see that variable is bound directly. Expand the controller and html in  such a way
+that submitting causes the scope variable 'submittingMessage' is copied to 'submittedMessage'. Which
+in turn is shown in the html.
+
+
+### 5.2 - Todo list
+
+Assignment will involve storing a list in the scope and iterating over it in the template
+
+### 5.3 - Logging
+
+USer the slogging library
+
+### 5.4 - Introducting material
+
+For looks. Requires very little extra. Assignment involves finding and adding the dependency.
+
+## 6 - Services and testing
+
+### 6.1 - Testing
+
+Setup a test in scala test to verify that the proper list is being returned.
+
+### 6.2 - Introduce the service
+
+Introduce the the dependency on the service and mock it in scala test.
+
+### 6.3 - Implement the service
+
+Implement the todo service with testing
+
+### 6.4 - Add new toto functionality
+
+Add test-driven adding and delete functionality to the controller and test.
+
+## 7 - Extend the frontend
+
+### 7.1 - MdDialog
+
+Use mdDialog for popping up an add box. Requires a scala.js facade for mdDialog.
+
+## 8 - Backend
+
+### 8.1 - Communicate with the backend
+
+Through pickling objects.
+
+### 8.2 - Shared code
+
+Remove duplicated code via scala.js shared code setup.
+
+## 9 - Logging
+
+### 9.1 - macro's
+
 
 # Sources:
 

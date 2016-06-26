@@ -8,10 +8,10 @@ import scala.scalajs.js.JSApp
 
 object HelloApp extends JSApp with Config {
 
-  println("MainApp init")
+  println("[myHelloApp] initialize")
 
   override def main() = {
-    println("MainApp.main() method")
+    println("[myHelloApp] enter main()")
     val myModule = Angular.module("myHelloApp")
 
     myModule.controller[HelloController]

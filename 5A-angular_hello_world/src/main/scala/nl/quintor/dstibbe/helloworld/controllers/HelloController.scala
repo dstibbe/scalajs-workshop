@@ -9,16 +9,15 @@ import scala.scalajs.js.annotation.JSExport
 class HelloController extends Controller[HelloScope] {
 
 
-  println("HelloCtrl initialize")
+  println("[HelloCtrl] initialize")
 
   @inject
   var scope: HelloScope = _
 
 
   override def initialize() {
+    println("[HelloCtrl] enter initialize()")
     super.initialize()
-    println("HelloCtrl.initialize() method")
-
 
     scope.submittedMessage = "Nothing submitted"
   }
@@ -26,7 +25,7 @@ class HelloController extends Controller[HelloScope] {
 
   @JSExport
   def submit() = {
-    println("HelloCtrl.submit() method")
+    println("[HelloCtrl] enter submit()")
 
     scope.submittedMessage = scope.submittingMessage
   }
