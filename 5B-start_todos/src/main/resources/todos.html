@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello World</title>
+    </head>
+<body  ng-app="theTodoApp" ng-controller="TodoCtrl" >
+
+    <h1>Todos</h1>
+    <li ng-repeat="todo in todos">
+        <span>{{todo.label}}</span>
+    </li>
+
+
+    <script type="text/javascript" src="../5B-start_todos-jsdeps.js"></script>
+    <script type="text/javascript" src="../5B-start_todos-fastopt.js"></script>
+
+    <script type="text/javascript">
+            nl.quintor.dstibbe.todos.TodoApp().main();
+    </script>
+
+
+</body>
+</html>
