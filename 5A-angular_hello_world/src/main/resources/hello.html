@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello World</title>
+    </head>
+<body  ng-app="myHelloApp" ng-controller="HelloCtrl" >
+
+
+    <div>
+        <label for="direct">Direct response</label>
+        <!-- input linked to directMessage field of the scope -->
+        <input id="direct" ng-model="directMessage"/>
+    </div>
+
+    <form>
+        <label for="submission">Response after submission</label>
+        <!-- input linked to submittingMessage field of the scope -->
+        <input id="submission" ng-model="submittingMessage"/>
+        <button ng-click="controller.submit()">submit</button>
+    </form>
+
+
+    <div>
+        <h2>Direct Message</h2>
+        <!-- link to model -->
+        <span>{{directMessage}}</span>
+        <h2>Submitted Message</h2>
+        <!-- link to model -->
+        <span>{{submittedMessage}}</span>
+    </div>
+
+    <!--<script type="text/javascript" src="/workbench.js"></script>-->
+    <script type="text/javascript" src="../5A-angular_hello_world-jsdeps.js"></script>
+    <script type="text/javascript" src="../5A-angular_hello_world-fastopt.js"></script>
+
+    <script type="text/javascript">
+            nl.quintor.dstibbe.helloworld.HelloApp().main();
+    </script>
+
+
+</body>
+</html>
