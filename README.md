@@ -470,6 +470,15 @@ Caveat:
 
 Setup a test in scala test to verify that the proper list is being returned.
 
+    "org.scalatest" %%% "scalatest" % "3.0.0-RC3"
+
+    scala js version 0.6.8
+
+Create src/test/scala (if it isn't seen as a test dir, add it)
+
+Disable Rhina, add phantomjs. Use angular.min.js
+
+
 ### 6.2 - Introduce the service
 
 Introduce the the dependency on the service and mock it in scala test.
