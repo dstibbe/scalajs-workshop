@@ -461,6 +461,9 @@ USer the slogging library
 
 For looks. Requires very little extra. Assignment involves finding and adding the dependency.
 
+Caveat:
+    val myModule = Angular.module("theTodoApp", Seq("ngMaterial"))
+
 ## 6 - Services and testing
 
 ### 6.1 - Testing
