@@ -539,7 +539,26 @@ Feel free to use internet as a reference.
 
 ### 5.3 - Logging
 
-USer the slogging library
+**Purpose**
+
+* No more print(ln)
+
+**Exercise 5.B**
+
+Well, also in Scala, using println is not done.
+
+A good logging framework is the **slogging** framework.
+
+Add
+```scala
+"biz.enef" %%% "slogging" % "0.4.0"
+ ```
+To your dependencies (regular, not jsDependencies).
+
+Now you can start logging by using the ```LazyLogging``` trait. This provides the ```logger``` field, which
+can be used to log at various levels (trace, debug, info, warn, error).
+
+> Replace all println's with logging.
 
 ### 5.4 - Introducting material
 
