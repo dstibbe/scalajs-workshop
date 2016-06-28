@@ -607,8 +607,6 @@ Now run it again
 
 ### 6.1 - Testing
 
-
-
 **Purpose**
 
 * Ability to test
@@ -625,6 +623,9 @@ scalaJSUseRhino in Global := false
 testFrameworks += new TestFramework("utest.runner.Framework")
 ```
 * Add ```RuntimeDOM``` to ```jsDependencies```
+
+
+Then we add phantomJs by copying ```phantomjs.exe` to the root of exercise **5.B** from exercie **6.A**
 
 Then we add the testing framework **utest** to our dependencies:
 * Add
