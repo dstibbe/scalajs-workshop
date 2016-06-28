@@ -712,6 +712,10 @@ class TaskServiceFactory(http: HttpService) extends Factory[TaskService] {
   override def apply() = new TaskService(http)
 }
 ```
+
+Note: do not add the ```@injectable``` to the service implementation, instead add it to the service trait that we implemented before.
+This way, you are not forced to inject the implementation in the controller, but can instead use the trait.
+
 Also don't forget to register the factory in the module as following:
 ```scala
 module.factory[TodoServiceFactory]
