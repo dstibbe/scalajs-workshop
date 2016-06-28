@@ -6,8 +6,7 @@ lazy val exercisesProjects = (project in file(".")).
   aggregate(exercises1,
     exercises2A, exercises2B, exercises2C,
     exercises3A, exercises4A, exercises4B, exercises4C,
-    exercises5A, exercises5B,
-    exercises7A)
+    exercises5A, exercises5B)
 
 lazy val exercises1 = project in file("1-standalone")
 lazy val exercises2A = project in file("2A-from_javascript")
@@ -19,4 +18,3 @@ lazy val exercises4B = project in file("4B-javascript_from_scalajs")
 lazy val exercises4C = project in file("4C-oscillo")
 lazy val exercises5A = project in file("5A-angular_hello_world")
 lazy val exercises5B = project in file("5B-start_todos")
-lazy val exercises7A = project in file("7A-mddialog")
