@@ -25,9 +25,7 @@ class HelloController extends Controller[HelloScope] {
 
   @JSExport
   def submit() = {
-    println("[HelloCtrl] enter submit()")
-
-    scope.submittedMessage = scope.submittingMessage
+    // submit me
   }
 
 

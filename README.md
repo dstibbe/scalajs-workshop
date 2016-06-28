@@ -435,16 +435,83 @@ You can reference the scala.js website all you like, suggestions:
 
 ## 5 - Angular introduction
 
+In short, Angular is a JavaScript-based MVC framework.
+
+Its main components are
+* Templates - the html setup of a page
+* Controllers - when the templates want to use funcationality, they call the controllers
+* Scopes - in these objects we store scoped data
+* Services - these are used for communicating to backend/third-party
+* Directives - can be seen as definitions for custom tags and/or arguments
+
+So, that was the extremely short introduction of Angular. We will revisit most of
+these elements later on in more detail.
+
+
 ### 5.1 - Hello world
 
+**Purpose**
 
-* Add angular dependency: difference between sbt and js dependencies
-* Add deps.js script to html
-* Binding is done through 'directives' like ng-model and "{{...}}" instructions.
-** {{name}} binds to the field called 'name' in te scope.
-** 'controller' is a special field though which you can access the controller.
+* Here we will get acquainted with the controller-scope setup in angular
 
-* Run. You see that variable is bound directly. Expand the controller and html in  such a way
+
+
+* Add a dependency on the Angular JavaScript library in sb by adding:
+
+```scala
+jsDependencies ++= Seq(
+  "org.webjars" % "angularjs" % "1.3.15" / "angular.js" // angular JavaScript library
+)
+```
+
+
+
+* Add a dependency to the Scala.js angular facade in the build.sbt by adding to ```libraryDependencies```
+
+```scala
+"com.greencatsoft" %%% "scalajs-angular" % "0.6" // scala.js interface for angular
+```
+
+* The Scala.js sbt  will bundle the **jsDependencies** in a ```*-jsdeps.js``` file
+which has already been added as source in ```hello.html```. You can see it above the inclusion of
+the ```-fastopt.js``` file.
+
+* Our template is ```hello.html``` .  In the body tag you see that two arguments:
+   1. ```ng-app="myHelloApp"``` - the angular module to use .
+   2. ```ng-controller="HelloCtrl"``` - the Controller bound to this tag.
+
+
+   In the body tag, we access the corresponding scope in several ways:
+   1. By arguments of ```ng-```directives, such as ```ng-click```, e.g.  ```<button ng-click="controller.submit()">```
+   2. By ```{{...}}``` expressions, e.g. ```{{directMessage}}```
+
+   The variables and methods you access through such expressions, all come from the scope, with the exception
+   of ```controller```, which is a special variable that provides access to the controller, via which you
+   can access the controller variables/methods (usually you only access methods).
+
+* If we open ```HelloController``` we see that it extends ```Controller``` . Each controller in the angular facade should
+extend this trait.
+  1. The type of Controller is ```HelloScope```. This binds our scope to this controller. It is injected through ```@inject```
+  2. The controller overwrites the method ```initialize``` which is called after the injection has been completed.
+  3. The controller is configured with ```@injectable("HelloCtrl")```, making it injectable within Angular using that name.
+
+* ```HelloScope``` extends the ```Scope``` trait. This is required for scope objects.
+  1. The scope is basically is a mapping to the javascript scope object ```js.Any```, whose lifecycle is managed by Angular.js
+
+* In the ```HelloApp``` the Angular module ```myHelloApp``` is registered (loaded in ng-app).
+  1. The controller also gets registered there
+  2. The HelloApp itself is designated as the Config object for this module.
+
+
+* Run the application:
+```scala
+sbt clean ~fastOptJS
+```
+
+You see that variable ```directMessage``` is mutated immediatly. This is due to the fact, that it mutates
+the exact same variable on the scope that you read from.
+
+> Expand the controller and html in  such a way
 that submitting causes the scope variable 'submittingMessage' is copied to 'submittedMessage'. Which
 in turn is shown in the html.
 
