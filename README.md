@@ -686,11 +686,44 @@ def getTodos(): Seq[Todo]
 
 ### 6.3 - Implement the service
 
-Implement the todo service with testing
+**Purpose**
+
+* Get the service to actually do something
+
+**Continue on Exercise 5.B**
+
+> Implement the TodoService extending the trait you made above. Implementing a Service requires you to also create a factory, which should be available under
+the same injection identifier as the service it self, e.g. :
+```scala
+@injectable("taskService")
+class TaskService(http: HttpService) {
+  ...
+}
+
+@injectable("taskService")
+class TaskServiceFactory(http: HttpService) extends Factory[TaskService] {
+  override def apply() = new TaskService(http)
+}
+```
+Also don't forget to register the factory in the module as following:
+```scala
+module.factory[TodoServiceFactory]
+```
+
+* Have this service return a list of todos.
 
 ### 6.4 - Add new todo functionality
 
-Add test-driven adding and delete functionality to the controller and test.
+**Purpose**
+
+* Adding and removing
+
+**Continue on Exercise 5.B**
+
+* Implement an add function  ```add(todo:Todo)``` to the service.
+
+* Implement an delete function  ```delete(todo:Todo)``` to the service.
+
 
 ## 7 - Extend the frontend
 
