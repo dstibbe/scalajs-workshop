@@ -753,6 +753,16 @@ We will use Angular material's mdDialog to create a popup for adding todos
   1. When saving, call the TodoService add functionality and add it to the passed todos array
 * Register the controller.
 
+### 7.2 - Remove todo
+
+**Purpose**
+
+* Add remove button to remove todo
+
+
+**Continue on Exercise 5.B**
+
+Far simpler than 7.1: add for eacht todo a button that will remove that todo from the list.
 
 
 # Sources:
