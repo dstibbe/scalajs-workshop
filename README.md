@@ -663,7 +663,25 @@ object (using ``` @ScalaJSDefined```) and cast it to TodoScope using ```asInstan
 
 ### 6.2 - Introduce the service
 
-Introduce the the dependency on the service and mock it in scala test.
+
+**Purpose**
+
+* Introduce the service interface
+
+**Continue on Exercise 5.B**
+
+* Create a trait for a TodoService that extends the ```Service````trait, with a method
+```scala
+def getTodos(): Seq[Todo]
+```
+
+* Add the TodoService to the constructor of our TodoController
+
+* Make the todo controller use the ```getTodos``` method of that Service.
+
+* Create a test that tests the usage of the Service.
+
+
 
 ### 6.3 - Implement the service
 
