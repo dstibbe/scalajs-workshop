@@ -455,7 +455,7 @@ these elements later on in more detail.
 * Here we will get acquainted with the controller-scope setup in angular
 
 
-**Exercise 5.B**
+**Exercise 5.A**
 
 * Add a dependency on the Angular JavaScript library in sb by adding:
 
