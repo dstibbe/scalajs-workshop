@@ -14,23 +14,12 @@ import scala.scalajs.js.annotation.JSExport
 @injectable("TodoCtrl")
 class TodoController(todoService: TodoServiceImpl) extends Controller[TodoScope] with LazyLogging {
 
-  logger.trace("[TodoCtrl] init")
 
-  @inject
-  var scope: TodoScope = _
 
   @inject
   var dialog: MdDialog = _
 
 
-  override def initialize() {
-    logger.trace("[TodoCtrl] enter initialize()")
-    super.initialize()
-
-    scope.todos = js.Array[Todo]()
-
-    retrieveTodos()
-  }
 
   @JSExport
   def showDialog() = {
@@ -47,7 +36,4 @@ class TodoController(todoService: TodoServiceImpl) extends Controller[TodoScope]
     dialog.show(confirm)
   }
 
-  def retrieveTodos(): Unit = {
-    scope.todos = todoService.getTodos().toJSArray
-  }
 }
