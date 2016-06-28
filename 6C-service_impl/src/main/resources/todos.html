@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <title>Todos</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
+
+    <link rel="stylesheet"
+          href="/target/web/web-modules/main/webjars/lib/angular-material/angular-material.min.css">
+
+</head>
+<body layout="column" ng-app="theTodoApp" ng-controller="TodoCtrl" layout-fill>
+
+    <md-toolbar id="headerContainer" layout="row">
+        <h1>My Todo List</h1>
+    </md-toolbar>
+
+
+    <div id="bodyContainer" layout="row" flex>
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+            <md-toolbar class="md-theme-indigo">
+                <h1 class="md-toolbar-tools">Sidenav</h1>
+            </md-toolbar>
+        </md-sidenav>
+        <div layout="column" flex>
+            <md-content id="todoList" flex class='md-padding'>
+                <md-card ng-repeat="todo in todos">
+                    <md-card-header>
+                        <md-card-header-text>
+                            {{todo.label}}
+                        </md-card-header-text>
+                    </md-card-header>
+                </md-card>
+            </md-content>
+        </div>
+    </div>
+
+
+    <md-content id="footerContainer" layout="row" layout-align="center center">
+        <span class="md-subhead">David's Todo List (c) 2016</span>
+    </md-content>
+
+
+    <script type="text/javascript" src="../6C-service_impl-jsdeps.js"></script>
+    <script type="text/javascript" src="../6C-service_impl-fastopt.js"></script>
+
+    <script type="text/javascript">
+            nl.quintor.dstibbe.todos.TodoApp().main();
+
+
+
+
+    </script>
+</body>
+</html>

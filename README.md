@@ -487,7 +487,7 @@ Introduce the the dependency on the service and mock it in scala test.
 
 Implement the todo service with testing
 
-### 6.4 - Add new toto functionality
+### 6.4 - Add new todo functionality
 
 Add test-driven adding and delete functionality to the controller and test.
 
@@ -497,19 +497,7 @@ Add test-driven adding and delete functionality to the controller and test.
 
 Use mdDialog for popping up an add box. Requires a scala.js facade for mdDialog.
 
-## 8 - Backend
 
-### 8.1 - Communicate with the backend
-
-Through pickling objects.
-
-### 8.2 - Shared code
-
-Remove duplicated code via scala.js shared code setup.
-
-## 9 - Logging
-
-### 9.1 - macro's
 
 
 # Sources:
