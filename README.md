@@ -747,6 +747,7 @@ We will use Angular material's mdDialog to create a popup for adding todos
 * Use the sources from **7.A**
   1. Form the TodoController, just use the ```showDialog``` method
   2. It provides a template, controller and scope for adding a todo. Only the template is complete
+  3. The template **todos.html** only has one change: the added button that triggers showing the mdDialog
 * Fix the implementation for the mdDialog facade.
 * Implement the AddTodoController and AddTodoScope
   1. When saving, call the TodoService add functionality and add it to the passed todos array
