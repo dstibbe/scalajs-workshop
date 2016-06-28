@@ -607,15 +607,58 @@ Now run it again
 
 ### 6.1 - Testing
 
-Setup a test in scala test to verify that the proper list is being returned.
 
-    "org.scalatest" %%% "scalatest" % "3.0.0-RC3"
 
-    scala js version 0.6.8
+**Purpose**
 
-Create src/test/scala (if it isn't seen as a test dir, add it)
+* Ability to test
 
-Disable Rhina, add phantomjs. Use angular.min.js
+**Continue on Exercise 5.B**
+
+First we have to disable the Rhino javascript engine. It somehow causes issues when trying to test.
+
+To disable Rhino, modify the build.sbt as following:
+
+* Add:
+```scala
+scalaJSUseRhino in Global := false
+testFrameworks += new TestFramework("utest.runner.Framework")
+```
+* Add ```RuntimeDOM``` to ```jsDependencies```
+
+Then we add the testing framework **utest** to our dependencies:
+* Add
+```scala
+ "com.lihaoyi" %%% "utest" % "0.3.0" % "test" // utest
+ ```
+
+* A problem arose when testing with angular however, this only works with ```angular.min.js``` instead of ```angular.js```
+Update the build.sbt accordingly.
+
+* Create a directory ```src/test/scala``` where you will place your tests.
+
+
+> Create a simple test to see whether the setup is working, e.g.
+```scala
+object SimpleTest extends TestSuite {
+
+  def tests = TestSuite{
+
+    'DoesItWork{
+      assert(0 == 0)
+    }
+  }
+}
+```
+
+> Run the simple test, using ```sbt test```
+
+> Now for something more difficult: create a test that will assert whether your TodoController has been initialized with the proper todos
+
+Hints:
+* to compare Arrays: ```arrayA.deep == arrayB.deep```
+* You cannot simply implement a ```Scope``` object in scala. Suggestion: create a scala based javascript
+object (using ``` @ScalaJSDefined```) and cast it to TodoScope using ```asInstanceOf```
 
 
 ### 6.2 - Introduce the service
