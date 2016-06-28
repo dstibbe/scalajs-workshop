@@ -562,10 +562,46 @@ can be used to log at various levels (trace, debug, info, warn, error).
 
 ### 5.4 - Introducting material
 
-For looks. Requires very little extra. Assignment involves finding and adding the dependency.
 
-Caveat:
-    val myModule = Angular.module("theTodoApp", Seq("ngMaterial"))
+**Purpose**
+
+* Nicer looks
+
+**Exercise 5.D**
+
+Angular material provides material UI components to angular with little extra cost.
+
+
+We start by updating ```build.sbt```
+First we extend our dependencies. Add the following to jsDependencies:
+```
+  "org.webjars" % "angularjs" % "1.3.15" / "angular-route.js" dependsOn "angular.js",
+  "org.webjars" % "angularjs" % "1.3.15" / "angular-animate.js" dependsOn "angular.js",
+  "org.webjars" % "angularjs" % "1.3.15" / "angular-aria.js" dependsOn "angular.js",
+  "org.webjars" % "angularjs" % "1.3.15" / "angular-locale_ko.js" dependsOn "angular.js",
+  "org.webjars" % "angular-material" % "1.0.6" / "angular-material.js" dependsOn "angular.js"
+```
+
+We add a new plugin to plugins.sbt:
+```scala
+addSbtPlugin("com.typesafe.sbt" % "sbt-web" % "1.1.1") //for managing the assets in target
+```
+
+Next we add enable the  plugin in build.sbt
+```scala
+enablePlugins(SbtWeb) //make resources (other than js) from webjars available
+```
+
+In the resources we find a new ```todos.html`` , copy this to your **5.B** exercise.
+This provides a template that uses for angular material.
+
+> Start the app.
+
+It probably doesn't look very nice. What you need is still an **Angular** dependency of your module on ```ngMaterial```
+
+> Modify your module in the TodoApp with the following:
+```val myModule = Angular.module("theTodoApp", Seq("ngMaterial"))```. This adds the required dependency on material.
+Now run it again
 
 ## 6 - Services and testing
 
