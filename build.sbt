@@ -7,7 +7,8 @@ lazy val exercisesProjects = (project in file(".")).
     exercises2A, exercises2B, exercises2C,
     exercises3A, exercises4A, exercises4B, exercises4C,
     exercises5A, exercises5B, exercises5C, exercises5D,
-    exercises6A, exercises6B, exercises6C)
+    exercises6A, exercises6B, exercises6C,
+    exercises7A)
 
 lazy val exercises1 = project in file("1-standalone")
 lazy val exercises2A = project in file("2A-from_javascript")
@@ -24,3 +25,4 @@ lazy val exercises5D = project in file("5D-angular_material")
 lazy val exercises6A = project in file("6A-testing")
 lazy val exercises6B = project in file("6B-service")
 lazy val exercises6C = project in file("6C-service_impl")
+lazy val exercises7A = project in file("7A-mddialog")
