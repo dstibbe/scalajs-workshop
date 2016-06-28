@@ -1,7 +1,7 @@
 package nl.quintor.dstibbe.todos
 
 import com.greencatsoft.angularjs.{Angular, Config}
-import nl.quintor.dstibbe.todos.controllers.TodoController
+import nl.quintor.dstibbe.todos.controllers.{AddTodoController, TodoController}
 import nl.quintor.dstibbe.todos.services.TodoServiceFactory
 import slogging.{ConsoleLoggerFactory, LazyLogging, LogLevel, LoggerConfig}
 
@@ -20,6 +20,7 @@ object TodoApp extends JSApp with Config with LazyLogging{
     val myModule = Angular.module("theTodoApp", Seq("ngMaterial"))
 
     myModule.controller[TodoController]
+    myModule.controller[AddTodoController]
     myModule.factory[TodoServiceFactory]
     myModule.config(this)
   }

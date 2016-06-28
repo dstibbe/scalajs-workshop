@@ -1,0 +1,17 @@
+<md-dialog aria-label="List dialog">
+    <md-dialog-content>
+
+        <md-card>
+            <md-card-header>
+                <md-card-header-text>
+                        <input type="text" placeholder="label" ng-model="item.label"/>
+                </md-card-header-text>
+            </md-card-header>
+        </md-card>
+
+    </md-dialog-content>
+    <md-dialog-actions>
+        <md-button class="md-primary" ng-click="controller.save()">Save</md-button>
+        <md-button ng-click="controller.cancel()">Cancel</md-button>
+    </md-dialog-actions>
+</md-dialog>
