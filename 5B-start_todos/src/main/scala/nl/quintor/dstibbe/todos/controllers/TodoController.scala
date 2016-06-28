@@ -20,16 +20,5 @@ class TodoController extends Controller[TodoScope] {
   override def initialize() {
     println("[TodoCtrl] enter initialize()")
     super.initialize()
-
-    scope.todos = initializeTodos()
-  }
-
-
-  def initializeTodos(): js.Array[Todo] = {
-    Array(
-      Todo("buy milk"),
-      Todo("buy eggs"),
-      Todo("repeat")
-    ).toJSArray
   }
 }

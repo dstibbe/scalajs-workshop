@@ -455,6 +455,7 @@ these elements later on in more detail.
 * Here we will get acquainted with the controller-scope setup in angular
 
 
+**Exercise 5.B**
 
 * Add a dependency on the Angular JavaScript library in sb by adding:
 
@@ -518,7 +519,23 @@ in turn is shown in the html.
 
 ### 5.2 - Todo list
 
-Assignment will involve storing a list in the scope and iterating over it in the template
+**Purpose**
+
+* Start the basics of a todo list
+
+**Exercise 5.B**
+
+We will create, a page showing a list of todo's from the scope using the following steps.
+Feel free to use internet as a reference.
+
+> Create a model of a case class called ```Todo``` with a field ```label```
+
+> Expand the scope with a ```js.Array``` of Todo's
+
+> Have the controller initialize the scope with a list of todos. Hint: ```.toJSArray```
+
+> Create an ordered list of todo's in the template ```using ```ng-repeat```
+
 
 ### 5.3 - Logging
 

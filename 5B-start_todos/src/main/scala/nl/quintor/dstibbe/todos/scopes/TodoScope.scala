@@ -7,5 +7,4 @@ import scala.scalajs.js
 
 @js.native
 trait TodoScope extends Scope {
-  var todos: js.Array[Todo] = js.native
 }
