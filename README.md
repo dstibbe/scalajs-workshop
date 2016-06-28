@@ -558,6 +558,13 @@ To your dependencies (regular, not jsDependencies).
 Now you can start logging by using the ```LazyLogging``` trait. This provides the ```logger``` field, which
 can be used to log at various levels (trace, debug, info, warn, error).
 
+To configure your logger, add the following to the construct of the TodoApp:
+```scala
+  LoggerConfig.factory = ConsoleLoggerFactory()
+  LoggerConfig.level = LogLevel.TRACE
+ ```
+ This configure it to log at Trace level to Console.
+
 > Replace all println's with logging.
 
 ### 5.4 - Introducting material
